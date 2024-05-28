@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myserver
+  labels:
+    app: myserver
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myserver
+  template:
+    metadata:
+      labels:
+        app: myserver
+    spec:
+      containers:
+      - name: myserver
+        image: kyubhinhan/myserver
+        ports:
+        - containerPort: 3001

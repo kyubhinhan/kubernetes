@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-myserver
+spec:
+  rules:
+    - host: myapp.todo
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/todos"
+          backend:
+            service:
+              name: service-myserver
+              port:
+                number: 3001
