@@ -6,6 +6,5 @@ spec:
   type: ClusterIP
   ports:
       - port: 27017
-  clusterIP: None
   selector:
     app: mydb
